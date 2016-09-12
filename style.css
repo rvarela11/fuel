@@ -1,3 +1,9 @@
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: tomato;
+    }
+}
+
 ul {
   margin: 0;
 }
@@ -5,49 +11,40 @@ ul {
 /*-------------------- HEADER --------------------*/
 
 .header {
+  border: 1px solid #000;
+  display: flex;
   width: 100%;
-  margin: auto;
 }
 
 .headerDivLogo {
   width: 100%;
-  margin: auto;
 }
 
 .headerImg {
-  margin: auto;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .headerDivLogo h3 {
-  margin: auto;
-  font-size: 24px;
+  margin: 0;
+  font-size: 20px;
+  width: 40%;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: #20A4F3;
-  padding-bottom: 2%;
-}
-
-.headerDiv {
-  display: flex;
-  width: 100%;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
 }
 
 .headerDivGoal{
-  background-color: rgba(0,0,0,0.8);
-  width: 50%;
   margin: 0;
+  width: 30%;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .headerDivGoal h3:first-child{
   margin: 0;
-  font-size: 40px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,15 +62,15 @@ ul {
 }
 
 .headerDivNow{
-  background-color: rgba(0,0,0,0.8);
   margin: 0;
-  width: 50%;
+  width: 30%;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .headerDivNow h3:first-child{
   border-left: 1px solid #000;
   margin: 0;
-  font-size: 40px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,14 +97,13 @@ ul {
 
 .imageBox {
   background-image:  url("IMG/fruit-circle3.png");
-  background-size: 100%;
+  background-size: 75%;
   background-repeat: no-repeat;
   background-position: center;
-  height: 500px;
+  height: 574px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5%;
 }
 
 .startTitle{
@@ -126,44 +122,14 @@ ul {
   align-items: center;
   justify-content: center;
   margin: auto;
-  height: 100px;
-  width: 200px;
-  font-size: 40px;
-}
-
-.startPageDiv{
- display: flex;
- align-items: center;
- justify-content: center;
- margin-top: 5%;
-}
-
-.startPageDiv2 h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 60px;
-  background-color: #ccc;
-}
-
-.startPageDiv2 i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 100px;
-}
-
-.startPageDiv2 p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
+  height: 50px;
+  width: 125px;
 }
 
 /*-------------------- Step 1 --------------------*/
 
 .inputsCalories{
-  width: 70%;
+  width: 75%;
   margin: auto;
 }
 
@@ -175,12 +141,12 @@ ul {
 
 .bodyBackground{
   margin-top: 2%;
-  background-color: #ccc;
-  height: 300px;
+  background-color: rgba(0,0,0,0.4);
+  height: 350px;
 }
 
 .stepHeader h2{
-  font-size: 60px;
+  font-size: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,12 +154,42 @@ ul {
   padding: 20px;
 }
 
+.stepArrows{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.arrow{
+  border: 1px solid #000;
+  width: 19%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowP{
+  cursor: pointer;
+}
+
+.stepArrows li:hover{
+  border: 3px solid #20A4F3;
+}
+
+.stepArrows li:hover .fa-arrow-left{
+  color: #20A4F3
+}
+
+.stepArrows li:hover .fa-arrow-right{
+ color: #20A4F3
+}
+
 .stepTitle{
   font-size: 30px;
   display: flex;
   justify-content: center;
-  color: #fff;
-  background-color: rgba(0,0,0,0.6);
 }
 
 .stepMainQuestions{
@@ -213,6 +209,11 @@ ul {
   justify-content: center;
 }
 
+/*.genderIconDiv{
+  display: flex;
+  justify-content: center;
+}*/
+
 .genderIcons{
   list-style-type: none;
   padding-left: 0;
@@ -223,10 +224,10 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 32px;
   /*padding: 2%;*/
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .genderIconTopLiMale{
@@ -237,7 +238,7 @@ ul {
   margin-bottom: 20px;
 }
 
-.labelsBottom {
+.genderLabel {
   margin-left: 10px;
 }
 
@@ -255,6 +256,22 @@ ul {
 
 .ageBox {
   margin-left: 125px;
+}
+
+.step1Gender {
+  width: 100%;
+}
+
+.step1Info {
+  width: 100%;
+}
+
+.step1Active {
+  width: 100%;
+}
+
+.step1Goal {
+  width: 100%;
 }
 
 .goalSubmitButton{
@@ -277,31 +294,6 @@ ul {
   height: 450px;
 }
 
-.foodButtonClass {
-  height: 100px;
-  width: 200px;
-}
-
-#foodButtonBreakfast{
-  font-size: 24px;
-}
-
-#foodButtonLunch{
-  font-size: 24px;
-}
-
-#foodButtonDinner{
-  font-size: 24px;
-}
-
-#foodButtonSnack {
-  font-size: 24px;
-}
-
-#foodButtonFinish{
-  font-size: 24px;
-}
-
 .step2Search{
   list-style-type: none;
   padding-left: 0;
@@ -309,7 +301,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2%;
+  margin-bottom: 10px;
 }
 
 .searchBarClass{
@@ -319,6 +311,10 @@ ul {
 
 #submitButtonStep2{
   margin-left: 10px;
+}
+
+#foodButtonFinish{
+  color: #fff;
 }
 
 .totalCaloriesTitle{
@@ -347,7 +343,7 @@ ul {
 
 .userListClass{
   border: 1px solid #000;
-  height: 400px;
+  height: 200px;
   width: 75%;
   padding-top: 10px;
   margin: auto;
@@ -369,7 +365,7 @@ ul {
 .tableResults{
   width: 100%;
   height: 400px;
-  font-size: 34px;
+  font-size: 24px;
 }
 
 thead {
@@ -388,6 +384,10 @@ td {
 
 .foodClass{
   background-color: #ccc;
+}
+
+.chart{
+  padding: 9%;
 }
 
 .noText {

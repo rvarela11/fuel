@@ -1,6 +1,13 @@
 $(document).ready(function() {
-
   $('#startButtonId').on('click', startButton);
+  $('#arrowGenderRight').on('click', arrowGenderRight);
+  $('#arrowInfoLeft').on('click', arrowInfoLeft);
+  $('#arrowInfoRight').on('click', arrowInfoRight);
+  $('#arrowActiveLeft').on('click', arrowActiveLeft);
+  $('#arrowActiveRight').on('click', arrowActiveRight);
+  $('#arrowGoalLeft').on('click', arrowGoalLeft);
+  $('input:radio').on("click", radioButtonFun);
+
   $('#submitButtonStep1').on('click', inputsInfoClick);
   $('#submitButtonStep2').on('click', search);
   $('#foodButtonFinish').on('click', finish);
@@ -16,15 +23,124 @@ $(document).ready(function() {
     lunchArr = [],
     dinnerArr = [],
     snackArr = [];
+  $('.step1Gender').hide();
+  $('.step1Info').hide();
+  $('.step1Active').hide();
+  $('.step1Goal').hide();
 
+  $('.imageBox').show();
   $('.inputsCalories').hide();
   $('.inputsSearch').hide();
   $('.outputFinish').hide();
 
   function startButton() {
     $('.imageBox').hide();
-    $('.startPageDiv').hide();
     $('.inputsCalories').show();
+    $('.step1Gender').show();
+  }
+
+  function arrowGenderRight() {
+    var $genderInput = $("input[type='radio'][name='gender']:checked").val();
+    if ($genderInput === undefined) {
+      $(".genderLabel").addClass("noText");
+      $('.radioButtonGender').prop('required', true);
+    } else {
+      $('.step1Gender').hide();
+      $('.step1Info').show();
+      $('.step1Active').hide();
+      $('.step1Goal').hide();
+      $(".genderLabel").removeClass("noText");
+    }
+  }
+
+  function arrowInfoLeft() {
+    $('.step1Gender').show();
+    $('.step1Info').hide();
+    $('.step1Active').hide();
+    $('.step1Goal').hide();
+  }
+
+  function arrowInfoRight() {
+    var $weight = $('#weight').val(),
+      $height = $('#height').val(),
+      $age = $('#age').val();
+    if ($weight === "" && $height === "" && $age === "") {
+      $("#weight").addClass("no");
+      $("#height").addClass("no");
+      $("#age").addClass("no");
+      $("#arrowInfoRight").stop();
+    } else if ($weight > 0 && $height === "" && $age === "") {
+      $("#weight").addClass("yes");
+      $("#height").addClass("no");
+      $("#age").addClass("no");
+      $("#arrowInfoRight").stop();
+    } else if ($weight === "" && $height > 0 && $age === "") {
+      $("#weight").addClass("no");
+      $("#height").addClass("yes");
+      $("#age").addClass("no");
+      $("#arrowInfoRight").stop();
+    } else if ($weight === "" && $height === "" && $age > 0) {
+      $("#weight").addClass("no");
+      $("#height").addClass("no");
+      $("#age").addClass("yes");
+      $("#arrowInfoRight").stop();
+    } else if ($weight > 0 && $height > 0 && $age === "") {
+      $("#weight").addClass("yes");
+      $("#height").addClass("yes");
+      $("#age").addClass("no");
+      $("#arrowInfoRight").stop();
+    } else if ($weight === "" && $height > 0 && $age > 0) {
+      $("#weight").addClass("no");
+      $("#height").addClass("yes");
+      $("#age").addClass("yes");
+      $("#arrowInfoRight").stop();
+    } else if ($weight > 0 && $height === "" && $age > 0) {
+      $("#weight").addClass("yes");
+      $("#height").addClass("no");
+      $("#age").addClass("yes");
+      $("#arrowInfoRight").stop();
+    } else if ($weight > 0 && $height > 0 && $age > 0) {
+      $('.step1Gender').hide();
+      $('.step1Info').hide();
+      $('.step1Active').show();
+      $('.step1Goal').hide();
+      $("#weight").addClass("yes");
+      $("#height").addClass("yes");
+      $("#age").addClass("yes");
+    }
+  }
+
+  function arrowActiveLeft() {
+    $('.step1Gender').hide();
+    $('.step1Info').show();
+    $('.step1Active').hide();
+    $('.step1Goal').hide();
+  }
+
+  function arrowActiveRight() {
+    var $activeInput = $("input[type='radio'][name='active']:checked").val();
+    if ($activeInput === undefined) {
+      $(".fontSizeBox span").css("color", "red");
+      $('.fontSizeBox').prop('required', true);
+    } else {
+      $('.step1Gender').hide();
+      $('.step1Info').hide();
+      $('.step1Active').hide();
+      $('.step1Goal').show();
+      $(".fontSizeBox span").css("color", "black");
+    }
+  }
+
+  function arrowGoalLeft() {
+    $('.step1Gender').hide();
+    $('.step1Info').hide();
+    $('.step1Active').show();
+    $('.step1Goal').hide();
+  }
+
+  function radioButtonFun() {
+    $("input:checked").nextAll().removeClass(
+      'noText');
   }
   //--------------- STEP 1 GOAL Calories ---------------
 
@@ -35,31 +151,32 @@ $(document).ready(function() {
       $height = $('#height').val(),
       $age = $('#age').val(),
       $activeInput = $("input[type='radio'][name='active']:checked").val();
-    // if ($goalInput === undefined) {
-    //   $(".fontSizeBox").addClass("noText");
-    //   $('.fontSizeBox').prop('required', true);
-    // } else {}
-    if ($genderInput === "Male") {
-      var total1Male = 66 + (6.23 * $weight) + (12.7 * $height) - (6.8 *
-        $age);
-      var total2Male = total1Male * $activeInput;
-      total = total2Male;
+    if ($goalInput === undefined) {
+      $(".fontSizeBox").addClass("noText");
+      $('.fontSizeBox').prop('required', true);
     } else {
-      var total1Female = 655 + (4.35 * $weight) + (4.7 * $height) - (4.7 *
-        $age);
-      var total2Female = total1Female * $activeInput;
-      total = total2Female;
+      if ($genderInput === "Male") {
+        var total1Male = 66 + (6.23 * $weight) + (12.7 * $height) - (6.8 *
+          $age);
+        var total2Male = total1Male * $activeInput;
+        total = total2Male;
+      } else {
+        var total1Female = 655 + (4.35 * $weight) + (4.7 * $height) - (4.7 *
+          $age);
+        var total2Female = total1Female * $activeInput;
+        total = total2Female;
+      }
+      if ($goalInput == "Lose") {
+        total = total - 500;
+      } else if ($goalInput == "Maintain") {
+        total = total;
+      } else {
+        total = total + 500;
+      }
+      $('#totalCaloriesDisplayGoal').text(Math.round(total));
+      $('.inputsCalories').hide();
+      $('.inputsSearch').show();
     }
-    if ($goalInput == "Lose") {
-      total = total - 500;
-    } else if ($goalInput == "Maintain") {
-      total = total;
-    } else {
-      total = total + 500;
-    }
-    $('#totalCaloriesDisplayGoal').text(Math.round(total));
-    $('.inputsCalories').hide();
-    $('.inputsSearch').show();
   }
 
   $('#searchBarId').keyup(function(e) {
@@ -153,6 +270,7 @@ $(document).ready(function() {
   //--------------- STEP 2 Buttons ---------------
 
   function foodButtons() {
+    $('#userListBreakfast').hide();
     $('#userListLunch').hide();
     $('#userListDinner').hide();
     $('#userListSnack').hide();
@@ -230,6 +348,23 @@ $(document).ready(function() {
       $('#difText').text(difEven);
       $('#difCal').text(0);
     }
+
+    //--------------- Chart ---------------
+
+    new Chartist.Bar('.ct-chart', {
+      labels: ['Calories'],
+      series: [
+        [goalCal],
+        [nowCal]
+      ]
+    }, {
+      seriesBarDistance: 10,
+      reverseData: true,
+      horizontalBars: true,
+      axisY: {
+        offset: 70
+      }
+    });
   }
 
 });
