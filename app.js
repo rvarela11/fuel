@@ -17,9 +17,9 @@ $(document).ready(function() {
     dinnerArr = [],
     snackArr = [];
 
-  $('.inputsCalories').parent().hide();
-  $('.inputsSearch').parent().hide();
-  $('.outputFinish').parent().hide();
+  $('.inputsCalories').hide();
+  $('.inputsSearch').hide();
+  $('.outputFinish').hide();
 
   function startButton() {
     $('.imageBox').hide();
