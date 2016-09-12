@@ -1,4 +1,8 @@
-$(document).ready(function() {
+$(document).bind("mobileinit", function() {
+  $.extend($.mobile, {
+    ajaxEnabled: false
+  });
+});
 
   $('#startButtonId').on('click', startButton);
   $('#submitButtonStep1').on('click', inputsInfoClick);
@@ -231,5 +235,3 @@ $(document).ready(function() {
       $('#difCal').text(0);
     }
   }
-
-});
