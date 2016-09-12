@@ -1,0 +1,405 @@
+ul {
+  margin: 0;
+}
+
+/*-------------------- HEADER --------------------*/
+
+.header {
+  width: 100%;
+  margin: auto;
+}
+
+.headerDivLogo {
+  width: 100%;
+  margin: auto;
+}
+
+.headerImg {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerDivLogo h3 {
+  margin: auto;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #20A4F3;
+  padding-bottom: 2%;
+}
+
+.headerDiv {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerDivGoal{
+  background-color: rgba(0,0,0,0.8);
+  width: 50%;
+  margin: 0;
+}
+
+.headerDivGoal h3:first-child{
+  margin: 0;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.headerDivGoal h3:nth-child(2n+0){
+  font-size: 40px;
+  margin: 0;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerDivNow{
+  background-color: rgba(0,0,0,0.8);
+  margin: 0;
+  width: 50%;
+}
+
+.headerDivNow h3:first-child{
+  border-left: 1px solid #000;
+  margin: 0;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.headerDivNow h3:nth-child(2n+0){
+  border-left: 1px solid #000;
+  margin: 0;
+  font-size: 40px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.totalCaloriesDisplayClass{
+  color: #5BBA6F;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/*-------------------- START --------------------*/
+
+.imageBox {
+  background-image:  url("IMG/fruit-circle3.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.startTitle{
+  color: #fff;
+  background-color: rgba(0,0,0,0.8);
+  font-size: 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#startButtonId {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 100px;
+  width: 200px;
+  font-size: 40px;
+}
+
+.startPageDiv{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 5%;
+}
+
+.startPageDiv2 h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  background-color: #ccc;
+}
+
+.startPageDiv2 i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+}
+
+.startPageDiv2 p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+/*-------------------- Step 1 --------------------*/
+
+.inputsCalories{
+  width: 70%;
+  margin: auto;
+}
+
+.stepMainInfo{
+  width: 100%;
+  margin: auto;
+  height: 450px;
+}
+
+.bodyBackground{
+  margin-top: 2%;
+  background-color: #ccc;
+  height: 300px;
+}
+
+.stepHeader h2{
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  padding: 20px;
+}
+
+.stepTitle{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.stepMainQuestions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepMainQuestionsOut{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goalInline{
+  display: flex;
+  justify-content: center;
+}
+
+.genderIcons{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.genderIconsLiClass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  /*padding: 2%;*/
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.genderIconTopLiMale{
+  margin-bottom: 20px;
+}
+
+.genderIconTopLiFemale{
+  margin-bottom: 20px;
+}
+
+.labelsBottom {
+  margin-left: 10px;
+}
+
+.fontSizeBox{
+  font-size: 24px;
+}
+
+.weightBox{
+  margin-left: 38px;
+}
+
+.heightBox{
+  margin-left: 7px;
+}
+
+.ageBox {
+  margin-left: 125px;
+}
+
+.goalSubmitButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/*-------------------- Step 2 --------------------*/
+
+.inputsSearch{
+  width: 75%;
+  margin: auto;
+}
+
+.stepMainInfo{
+  width: 100%;
+  margin: auto;
+  height: 450px;
+}
+
+.foodButtonClass {
+  height: 100px;
+  width: 200px;
+}
+
+#foodButtonBreakfast{
+  font-size: 24px;
+}
+
+#foodButtonLunch{
+  font-size: 24px;
+}
+
+#foodButtonDinner{
+  font-size: 24px;
+}
+
+#foodButtonSnack {
+  font-size: 24px;
+}
+
+#foodButtonFinish{
+  font-size: 24px;
+}
+
+.step2Search{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.searchBarClass{
+  height: 37px;
+  width: 200px;
+}
+
+#submitButtonStep2{
+  margin-left: 10px;
+}
+
+.totalCaloriesTitle{
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.totalCalories {
+  border:1px solid #000;
+}
+
+.resultsListClass li:nth-child(even){
+  background: #CCC;
+}
+
+.userListClass li:nth-child(even){
+  background: #CCC;
+}
+
+.resultsListClass{
+  width: 75%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+}
+
+.userListClass{
+  border: 1px solid #000;
+  height: 400px;
+  width: 75%;
+  padding-top: 10px;
+  margin: auto;
+}
+
+/*-------------------- Step 3 --------------------*/
+
+.mainDisplayChart{
+  display: flex;
+  width: 75%;
+  margin: auto;
+}
+
+.resultsDisplay{
+  border: 1px solid #000;
+  width: 100%;
+}
+
+.tableResults{
+  width: 100%;
+  height: 400px;
+  font-size: 34px;
+}
+
+thead {
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+.headTr {
+  height: 50px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.foodClass{
+  background-color: #ccc;
+}
+
+.noText {
+  color: red;
+}
+
+.no {
+  background-color: #FE938C;
+  border: 1px solid red;
+}
+
+.yes {
+  background-color: #C7EFCF;
+  border: 1px solid green;
+}

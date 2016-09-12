@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css
+">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+
+    <header class="mainHeader">
+      <div class="header">
+        <div class="headerDivLogo">
+          <img class="headerImg" src="IMG/fuel-logo.jpg" alt="fuel logo" width="40%" height="100px"/>
+          <h3>Train Mean. Eat Clean. Stay Lean.</h3>
+        </div>
+        <div class="headerDiv">
+          <div class="headerDivGoal">
+            <h3>Goal calories </h3>
+            <h3><strong><span class="totalCaloriesDisplayClass" id="totalCaloriesDisplayGoal"></span></strong></h3>
+          </div>
+          <div class="headerDivNow">
+            <h3>Now calories </h3>
+            <h3><strong><span class="totalCaloriesDisplayClass" id="totalCaloriesDisplayNow"></span></strong></h3>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<!-- Start Page -->
+
+    <main class="mainDiv">
+        <div class="imageBox">
+          <div class="start">
+            <div class="startInfo">
+              <h2 class="startTitle"> 3 steps to a healthier life </h2>
+              <button id="startButtonId" class="ui primary button startButtonClass"> Start </button>
+            </div>
+          </div>
+        </div>
+        <div class="startPageDiv">
+          <div class="startPageDiv2">
+            <h2><strong>Step 1</strong></h2>
+            <i class="fa fa-check-circle-o fa-5x" aria-hidden="true"></i>
+            <p>Know your goal calories.</p>
+            <h2><strong>- Step 2 -</strong></h2>
+            <i class="fa fa-cutlery fa-5x" aria-hidden="true"></i>
+            <p>Know how many calories you are consuming now.</p>
+            <h2><strong>- Step 3 -</strong></h2>
+            <i class="fa fa-bar-chart fa-5x" aria-hidden="true"></i>
+            <p>Get your results.</p>
+          </div>
+        </div>
+
+<!-- Step 1 Page -->
+
+      <div class="inputsCalories">
+        <div class="stepHeader">
+          <h2>- Step 1 -</h2>
+        </div>
+        <div class="stepMainInfo">
+          <div class="step1Gender">
+            <div class="bodyBackground">
+              <h3 class="stepTitle">Gender</h3>
+              <div class="stepMainQuestions">
+                <div class="genderIconDiv">
+                  <ul class="genderIcons">
+                    <li id="genderIconsLiId" class="genderIconsLiClass genderIconTopLiMale" value="Male"><i class="fa fa-male fa-5x" aria-hidden="true"></i></li>
+                    <li class="genderIconsLiClass">
+                      <input id="male" class="radioButtonGender" type="radio" name="gender" value="Male"/>
+                      <label class="labelsBottom">Male</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="genderIconDiv">
+                  <ul class="genderIcons">
+                    <li class="genderIconsLiClass genderIconTopLiFemale"><i class="fa fa-female fa-5x" aria-hidden="true"></i></li>
+                    <li class="genderIconsLiClass">
+                      <input id="female" class="radioButtonGender" type="radio" name="gender" value="Female"/>
+                      <label class="labelsBottom">Female</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step1Info">
+            <div class="bodyBackground">
+              <h3 class="stepTitle">Info</h3>
+              <div class="stepMainQuestionsOut">
+                <div class="stepMainQuestionsIn">
+                  <label class="fontSizeBox" for="number">Weight (lbs): </label>
+                  <input class="weightBox" id="weight" type="number" name="numberWeight"><p></p>
+                  <label class="fontSizeBox" for="number">Height (inches): </label>
+                  <input class="heightBox" id="height" type="number" name="numberHeight"><p></p>
+                  <label class="fontSizeBox" for="number">Age: </label>
+                  <input class="ageBox" id="age" type="number" name="numberAge"><p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step1Active">
+            <div class="bodyBackground">
+              <h3 class="stepTitle">Active</h3>
+              <div class="stepMainQuestionsOut">
+                <div class="stepMainQuestionsIn">
+                  <input type="radio" name="active" value="1.2"/>
+                  <label class="fontSizeBox"><span>Sedentary:</span> Little or no exercise</label><p></p>
+                  <input type="radio" name="active" value="1.375"/>
+                  <label class="fontSizeBox"> <span>Lightly Active:</span> Light exercise (1-3 days/week)</label><p></p>
+                  <input type="radio" name="active" value="1.55"/>
+                  <label class="fontSizeBox"> <span>Moderately Active:</span> Moderate exercise (3-5 days/week)</label><p></p>
+                  <input type="radio" name="active" value="1.7"/>
+                  <label class="fontSizeBox"> <span>Very Active:</span> Hard exercise (6-7 days/week)</label><p></p>
+                  <input type="radio" name="active" value="1.9"/>
+                  <label class="fontSizeBox"> <span>Extremely Active:</span> Hard daily exercise and/or a physical job</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step1Goal">
+            <div class="bodyBackground">
+              <h3 class="stepTitle">Goal</h3>
+              <div class="stepMainQuestionsOut">
+                <div class="stepMainQuestionsIn goalInline">
+                  <div class="genderIconDiv">
+                    <ul class="genderIcons">
+                      <li class="genderIconsLiClass genderIconTopLiMale"><i class="fa fa-minus-square-o fa-4x" aria-hidden="true"></i></li>
+                      <li class="genderIconsLiClass">
+                        <input id="lose" class="radioButtonGoal" type="radio" name="goal" value="Lose"/>
+                        <label class="fontSizeBox labelsBottom">Lose</label><p></p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="genderIconDiv">
+                    <ul class="genderIcons">
+                      <li class="genderIconsLiClass genderIconTopLiMale"><i class="fa fa-times-circle-o fa-4x" aria-hidden="true"></i></li>
+                      <li class="genderIconsLiClass">
+                        <input id="maintain" class="radioButtonGoal" type="radio" name="goal" value="Maintain"/>
+                        <label class="fontSizeBox labelsBottom">Maintain</label><p></p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="genderIconDiv">
+                    <ul class="genderIcons">
+                      <li class="genderIconsLiClass genderIconTopLiMale"><i class="fa fa-plus-square-o fa-4x" aria-hidden="true"></i></li>
+                      <li class="genderIconsLiClass">
+                        <input id="gain" class="radioButtonGoal" type="radio" name="goal" value="Gain"/>
+                        <label class="fontSizeBox labelsBottom">Gain</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="goalSubmitButton">
+                <button id="submitButtonStep1" class="ui primary button"> Submit </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Step 2 Page -->
+
+      <div class="inputsSearch">
+        <div class="stepHeader">
+          <h2>Step 2</h2>
+        </div>
+        <div class="stepMainInfo">
+        <ul class="step2Search">
+          <li><button class="foodButtonClass ui button" id="foodButtonBreakfast">Breakfast</button></li>
+          <li><button class="foodButtonClass ui button" id="foodButtonLunch">Lunch</button></li>
+          <li><button class="foodButtonClass ui button" id="foodButtonDinner">Dinner</button></li>
+          <li><button class="foodButtonClass ui button" id="foodButtonSnack">Snack</button></li>
+          <li><button class="foodButtonClass ui green button" id="foodButtonFinish">Finish</button></li>
+        </ul>
+        <div class="step2Search">
+          <input type="textbox" id="searchBarId" class="searchBarClass" autofocus autocomplete="off" placeholder="Search Item ..."/>
+          <button id="submitButtonStep2" class="ui primary button"> Submit </button>
+        </div>
+          <ul class="resultsListClass" id="resultsListId">
+          </ul>
+          <ul class="userListClass" id="userListBreakfast"><span class="totalCaloriesTitle">Breakfast calories: </span><strong><span id="totalCaloriesBreakfast" class="totalCaloriesTitle"></span></strong></ul>
+          <ul class="userListClass" id="userListLunch"><span class="totalCaloriesTitle">Lunch calories: </span><strong><span id="totalCaloriesLunch" class="totalCaloriesTitle"></span></strong></ul>
+          <ul class="userListClass" id="userListDinner"><span class="totalCaloriesTitle">Dinner calories: </span><strong><span id="totalCaloriesDinner" class="totalCaloriesTitle"></span></strong></ul>
+          <ul class="userListClass" id="userListSnack"><span class="totalCaloriesTitle">Snack calories: </span><strong><span id="totalCaloriesSnack" class="totalCaloriesTitle"></span></strong></ul>
+        </div>
+      </div>
+
+<!-- Step 3 Page -->
+
+      <div class="outputFinish">
+        <div class="stepHeader">
+          <h2>Step 3</h2>
+        </div>
+        <div class="mainDisplayChart">
+          <div class="resultsDisplay">
+            <table class="tableResults">
+              <thead>
+                <tr class="headTr">
+                 <th>Name</th>
+                 <th>Calories</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Goal</td>
+                   <td id="goalCal"></td>
+                </tr>
+                <tr>
+                  <td>Now</td>
+                  <td id="nowCal"></td>
+                </tr>
+                <tr>
+                  <td id="difText"></td>
+                  <td id="difCal"></td>
+                </tr>
+                <tr>
+                  <td class="foodClass">Breakfast</td>
+                   <td id="breakfastCal" class="foodClass"></td>
+                </tr>
+                <tr>
+                  <td class="foodClass">Lunch</td>
+                   <td id="lunchCal" class="foodClass"></td>
+                </tr>
+                <tr>
+                  <td class="foodClass">Dinner</td>
+                   <td id="dinnerCal" class="foodClass"></td>
+                </tr>
+                <tr>
+                  <td class="foodClass">Snack</td>
+                   <td id="snackCal" class="foodClass"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
+<script src="app.js"></script>
+<!-- <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script type="text/javascript">
+    $(document).bind("mobileinit", function () {
+        $.extend($.mobile, {
+            ajaxEnabled: false
+        });
+    });
+</script> -->
+<script src="jquery.ui.touch-punch.js"></script>
+</body>
+</html>
