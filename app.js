@@ -1,8 +1,4 @@
-$(document).bind("mobileinit", function() {
-  $.extend($.mobile, {
-    ajaxEnabled: false
-  });
-});
+$(document).ready(function() {
 
   $('#startButtonId').on('click', startButton);
   $('#submitButtonStep1').on('click', inputsInfoClick);
@@ -21,9 +17,9 @@ $(document).bind("mobileinit", function() {
     dinnerArr = [],
     snackArr = [];
 
-  $('.inputsCalories').hide();
-  $('.inputsSearch').hide();
-  $('.outputFinish').hide();
+  $('.inputsCalories').parent().hide();
+  $('.inputsSearch').parent().hide();
+  $('.outputFinish').parent().hide();
 
   function startButton() {
     $('.imageBox').hide();
@@ -235,3 +231,5 @@ $(document).bind("mobileinit", function() {
       $('#difCal').text(0);
     }
   }
+
+});
