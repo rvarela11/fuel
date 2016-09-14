@@ -6,5 +6,4 @@ Technologies used:
 2. CSS
 3. JavaScript
 4. jQuery
-5. Chartist.js
-6. nutritionix(API)
+5. nutritionix(API)

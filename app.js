@@ -7,6 +7,7 @@ $(document).ready(function() {
   $('#arrowActiveRight').on('click', arrowActiveRight);
   $('#arrowGoalLeft').on('click', arrowGoalLeft);
   $('input:radio').on("click", radioButtonFun);
+  $("input[type='number']").on('mousedown', numberFun);
 
   $('#submitButtonStep1').on('click', inputsInfoClick);
   $('#submitButtonStep2').on('click', search);
@@ -139,9 +140,15 @@ $(document).ready(function() {
   }
 
   function radioButtonFun() {
-    $("input:checked").nextAll().removeClass(
-      'noText');
+    $('.genderLabel').css("color", "black");
+    $(".fontSizeBox span").css("color", "black");
+    $(".fontSizeBox").css("color", "black");
   }
+
+  function numberFun() {
+    $(this).addClass("yes");
+  }
+
   //--------------- STEP 1 GOAL Calories ---------------
 
   function inputsInfoClick() {
@@ -270,7 +277,7 @@ $(document).ready(function() {
   //--------------- STEP 2 Buttons ---------------
 
   function foodButtons() {
-    $('#userListBreakfast').hide();
+    $('#userListBreakfast').show();
     $('#userListLunch').hide();
     $('#userListDinner').hide();
     $('#userListSnack').hide();
@@ -315,56 +322,53 @@ $(document).ready(function() {
   //--------------- STEP 2 Finish Buttons ---------------
 
   function finish() {
-    $('.inputsSearch').hide();
-    $('.outputFinish').show();
-    goalCal = Math.round(total);
-    nowCal = userArr.reduce((prev,
-      curr) => prev + curr);
-    var difOver = "Over goal by: ";
-    var difCalOver = nowCal - goalCal;
-    var difUnder = "Under goal by: ";
-    var difCalUnder = goalCal - nowCal;
-    var difEven = "Keep up the good work!";
-
-    $('#goalCal').text(Math.round(total));
-    $('#nowCal').text(userArr.reduce((prev,
-      curr) => prev + curr));
-    $('#breakfastCal').text(breakfastArr.reduce((prev,
-      curr) => prev + curr));
-    $('#lunchCal').text(lunchArr.reduce((prev,
-      curr) => prev + curr));
-    $('#dinnerCal').text(dinnerArr.reduce((prev,
-      curr) => prev + curr));
-    $('#snackCal').text(snackArr.reduce((prev,
-      curr) => prev + curr));
-
-    if (nowCal > goalCal) {
-      $('#difText').text(difOver);
-      $('#difCal').text(difCalOver);
-    } else if (goalCal > nowCal) {
-      $('#difText').text(difUnder);
-      $('#difCal').text(difCalUnder);
+    if (breakfastArr.length === 0) {
+      breakfastButton();
+      $('#foodButtonFinish').stop();
+    } else if (lunchArr.length === 0) {
+      lunchButton();
+      $('#foodButtonFinish').stop();
+    } else if (dinnerArr.length === 0) {
+      dinnerButton();
+      $('#foodButtonFinish').stop();
+    } else if (snackArr.length === 0) {
+      snackButton();
+      $('#foodButtonFinish').stop();
     } else {
-      $('#difText').text(difEven);
-      $('#difCal').text(0);
-    }
+      goalCal = Math.round(total);
+      nowCal = userArr.reduce((prev,
+        curr) => prev + curr);
+      var difOver = "Over goal by: ";
+      var difCalOver = nowCal - goalCal;
+      var difUnder = "Under goal by: ";
+      var difCalUnder = goalCal - nowCal;
+      var difEven = "Keep up the good work!";
 
-    //--------------- Chart ---------------
+      $('#goalCal').text(Math.round(total));
+      $('#nowCal').text(userArr.reduce((prev,
+        curr) => prev + curr));
+      $('#breakfastCal').text(breakfastArr.reduce((prev,
+        curr) => prev + curr));
+      $('#lunchCal').text(lunchArr.reduce((prev,
+        curr) => prev + curr));
+      $('#dinnerCal').text(dinnerArr.reduce((prev,
+        curr) => prev + curr));
+      $('#snackCal').text(snackArr.reduce((prev,
+        curr) => prev + curr));
 
-    new Chartist.Bar('.ct-chart', {
-      labels: ['Calories'],
-      series: [
-        [goalCal],
-        [nowCal]
-      ]
-    }, {
-      seriesBarDistance: 10,
-      reverseData: true,
-      horizontalBars: true,
-      axisY: {
-        offset: 70
+      if (nowCal > goalCal) {
+        $('#difText').text(difOver);
+        $('#difCal').text(difCalOver);
+      } else if (goalCal > nowCal) {
+        $('#difText').text(difUnder);
+        $('#difCal').text(difCalUnder);
+      } else {
+        $('#difText').text(difEven);
+        $('#difCal').text(0);
       }
-    });
+      $('.inputsSearch').hide();
+      $('.outputFinish').show();
+    }
   }
 
 });
