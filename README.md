@@ -7,3 +7,7 @@ Technologies used:
 3. JavaScript
 4. jQuery
 5. nutritionix(API)
+
+Need:
+
+Make application compatiable with safari and be mobile friendly. 
