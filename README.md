@@ -10,4 +10,4 @@ Technologies used:
 
 Need:
 
-Make application compatiable with safari and be mobile friendly. 
+Make application compatible with safari and be mobile friendly. 
